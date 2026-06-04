@@ -17,9 +17,18 @@ common warnings
 
 library
     import:           warnings
-    exposed-modules:  Unfoldr
+    exposed-modules:  
+      , Unfoldr
+      , QuantifiedConstraints
+      
     -- other-modules:
     -- other-extensions:
-    build-depends:    base ^>=4.18.3.0
+    build-depends:
+      , base ^>=4.18.3.0
+      , borsh
+      , bytestring
+      , cryptonite
+      , megaparsec
+      , parser-combinators
     hs-source-dirs:   src
     default-language: GHC2021
