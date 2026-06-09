@@ -78,8 +78,8 @@ showAction _ = show
 ---------------------------------------------------------------------------------
 
 data Expr a where 
-  Val :: a -> Expr a 
-  Add :: Expr Int -> Expr Int -> Expr Int 
+  Val   :: a -> Expr a 
+  Add   :: Expr Int -> Expr Int -> Expr Int 
   Equal :: Expr Int -> Expr Int -> Expr Bool 
   If    :: Expr Bool -> Expr a -> Expr a -> Expr a 
 

@@ -20,6 +20,8 @@ library
     exposed-modules:  
       , Unfoldr
       , QuantifiedConstraints
+      , Injectivity 
+      , Falsify
       
     -- other-modules:
     -- other-extensions:
