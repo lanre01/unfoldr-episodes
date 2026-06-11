@@ -1,4 +1,0 @@
-cradle:
-  cabal:
-    - path: "./unfoldr-episodes/src"
-      component: "lib:unfoldr"

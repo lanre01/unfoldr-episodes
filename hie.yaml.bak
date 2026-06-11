@@ -1,0 +1,12 @@
+cradle:
+  cabal:
+    - path: "./unfoldr-episodes/src"
+      component: "lib:unfoldr"
+    - path: "./unfoldr-episodes/app/ComposingLeftFolds.hs"
+      component: "unfoldr:exe:composing-left-folds"
+    - path: "./unfoldr-episodes/app/ComposingLeftFoldsMR.hs"
+      component: "unfoldr:exe:composing-left-folds-MR"
+    - path: "./unfoldr-episodes/app/ComposingLeftFoldsSF.hs"
+      component: "unfoldr:exe:composing-left-folds-SF"
+    - path: "./unfoldr-episodes/app/ComposingLeftFoldsCF.hs"
+      component: "unfoldr:exe:composing-left-folds-CF"
