@@ -22,6 +22,7 @@ library
       , QuantifiedConstraints
       , Injectivity 
       , Falsify
+      , LearningByTesting
       
     -- other-modules:
     -- other-extensions:
@@ -32,6 +33,8 @@ library
       , cryptonite
       , megaparsec
       , parser-combinators
+      , transformers
+      
     hs-source-dirs:   src
     default-language: GHC2021
 
