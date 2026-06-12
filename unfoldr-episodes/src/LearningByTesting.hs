@@ -8,6 +8,9 @@ import Prelude hiding (filter)
 
 -- This episode just go over how to use the power types 
 -- to write safe programs instead of just using booleans.
+-- https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/ 
+-- talks about using types to control the control flow of the program
+
 
 -- | Original filter
 filter :: (a -> Bool) -> [a] -> [a]
