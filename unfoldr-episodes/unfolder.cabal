@@ -23,6 +23,7 @@ library
       , Injectivity 
       , Falsify
       , LearningByTesting
+      , GeneralBracket
       
     -- other-modules:
     -- other-extensions:
@@ -66,3 +67,7 @@ executable composing-left-folds-CF
 executable computing-type-classes   
     import: executable-options
     main-is: ComputingTypeClasses.hs
+
+executable laws
+    import: executable-options
+    main-is: Laws.hs 
