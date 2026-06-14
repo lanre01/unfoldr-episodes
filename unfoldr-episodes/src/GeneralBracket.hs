@@ -6,6 +6,8 @@ import Control.Concurrent hiding (withMVar)
 import Control.Monad.Trans.State
 import Control.Monad.Trans.Except
 import Control.Monad
+import Control.Monad.ST
+
 
 
 -- takeMVar :: MVar a -> IO a 
@@ -139,6 +141,16 @@ generalBracketIO acquire release use = mask $ \unmask -> do
 instance MonadBracket IO where 
     generalBracket = generalBracketIO 
 
+instance MonadBracket (ST s) where
+    generalBracket acquire release use = do 
+        a <- acquire
+        b <- use a
+        release a (ExistCaseSuccess b) 
+        
+
+
+                  
+
 instance MonadBracket m => MonadBracket (StateT s m) where 
     generalBracket (StateT acquire) release use = StateT $ \s -> 
         generalBracket
@@ -155,7 +167,7 @@ instance MonadBracket m => MonadBracket (ExceptT e m) where
     generalBracket (ExceptT acquire) release use = ExceptT $ 
         generalBracket
            acquire 
-           (\case 
+           (\ case 
               Left  e -> const $ return (Left e)
               Right a -> \case 
                 ExistCaseSuccess  (Right b) -> runExceptT (release a (ExistCaseSuccess b))
@@ -166,8 +178,9 @@ instance MonadBracket m => MonadBracket (ExceptT e m) where
                     case mc of 
                         Left e2  -> return $ Left e2 
                         Right _  -> return $ Left e1)
-           (\case 
+           (\ case 
               Right a -> runExceptT (use a) 
               Left  e -> return (Left e)
             ) 
-           
+
+

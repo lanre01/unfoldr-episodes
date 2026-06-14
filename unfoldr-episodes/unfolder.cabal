@@ -24,6 +24,7 @@ library
       , Falsify
       , LearningByTesting
       , GeneralBracket
+      , HigherKindedTypes
       
     -- other-modules:
     -- other-extensions:
@@ -35,6 +36,7 @@ library
       , megaparsec
       , parser-combinators
       , transformers
+      , text 
       
     hs-source-dirs:   src
     default-language: GHC2021
