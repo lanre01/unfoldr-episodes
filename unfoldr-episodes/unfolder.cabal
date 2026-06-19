@@ -25,6 +25,7 @@ library
       , LearningByTesting
       , GeneralBracket
       , HigherKindedTypes
+      , ComputingConstraints 
       
     -- other-modules:
     -- other-extensions:
@@ -73,3 +74,8 @@ executable computing-type-classes
 executable laws
     import: executable-options
     main-is: Laws.hs 
+
+executable interruptible-operations
+    import: executable-options
+    main-is: InterruptibleOperations.hs 
+    
