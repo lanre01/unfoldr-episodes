@@ -26,6 +26,9 @@ library
       , GeneralBracket
       , HigherKindedTypes
       , ComputingConstraints 
+      , Dijkstra
+      , Graph
+      , ListFusion
       
     -- other-modules:
     -- other-extensions:
@@ -38,6 +41,7 @@ library
       , parser-combinators
       , transformers
       , text 
+      , containers
       
     hs-source-dirs:   src
     default-language: GHC2021
@@ -48,6 +52,12 @@ common executable-options
       , base ^>=4.18.3.0
       , unfoldr
       , foldl 
+      , QuickCheck
+      , tasty 
+      , tasty-quickcheck
+      , containers
+      , criterion 
+
     hs-source-dirs: app
     default-language: GHC2021
 
@@ -78,4 +88,11 @@ executable laws
 executable interruptible-operations
     import: executable-options
     main-is: InterruptibleOperations.hs 
-    
+
+executable testing-without-reference
+    import: executable-options
+    main-is: TestingWithoutReference.hs 
+
+executable foldr-build-fusion
+    import: executable-options
+    main-is: FoldrBuildFusion.hs 
