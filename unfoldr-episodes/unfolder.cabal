@@ -29,6 +29,8 @@ library
       , Dijkstra
       , Graph
       , ListFusion
+      , GenericFolds
+      , VarArgs
       
     -- other-modules:
     -- other-extensions:
