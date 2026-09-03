@@ -33,6 +33,7 @@ library
       , VarArgs
       , STOwn
       , Singleton
+      , Vector 
       
     -- other-modules:
     -- other-extensions:
